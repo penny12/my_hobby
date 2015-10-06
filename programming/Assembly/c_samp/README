@@ -1,0 +1,4 @@
+
+nasm -felf test_out.s -l test.lst && gcc test_out.o -o test
+
+gcc -masm=intel -S test.c -o test.s

@@ -1,0 +1,4 @@
+#include <iostream>
+using namespace std;
+
+#define ARRAY_SIZE(array) (sizeof (array) / sizeof (*array))

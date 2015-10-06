@@ -1,0 +1,101 @@
+     1                                  CR	equ 0x0d
+     2                                  LF	equ 0x0a
+     3                                  EOS	equ 00
+     4                                  EXIT	equ 0x01
+     5                                  READ	equ 0x03
+     6                                  WRITE	equ 0x04
+     7                                  
+     8                                  	;; org 0xbfcc6000
+     9                                  	;; dd msg
+    10                                  	
+    11                                  	global main
+    12                                  main:
+    13                                  
+    14                                  ;; keyin:
+    15                                  ;; 	;; call chrin
+    16                                  ;; 	;; mov eax, [edi]
+    17                                  ;; 	cmp eax, '1'
+    18                                  ;; 	jz job1
+    19                                  ;; 	cmp edi, '2'
+    20                                  ;; 	jz job2
+    21                                  ;; 	cmp edi, '3'
+    22                                  ;; 	jz job3
+    23                                  ;; 	cmp edi, '4'
+    24                                  ;; 	jz job4
+    25                                  
+    26                                  ;; 	mov ebp, qst
+    27                                  ;; 	call msgout
+    28                                  
+    29                                  ;; 	jmp keyin
+    30                                  	
+    31                                  
+    32                                  ;; job1:
+    33                                  ;; 	mov edx, job1_len	; size_t 1
+    34                                  ;; 	mov ecx, job1_msg
+    35                                  ;; 	mov ebx, 1		; absolutry 1
+    36                                  ;; 	mov eax, WRITE		; syscall 4 : sys_write
+    37                                  ;; 	int 0x80
+    38                                  
+    39                                  ;; 	jmp keyin
+    40                                  	
+    41                                  ;; job2:	
+    42                                  ;; job3:	
+    43                                  ;; job4:
+    44 00000000 55                      	push ebp
+    45 00000001 BD[5B000000]            	mov ebp, msg
+    46 00000006 E81A000000              	call msgout
+    47 0000000B 5D                      	pop ebp
+    48 0000000C E83D000000              	call quit
+    49                                  	
+    50                                  chrin:
+    51 00000011 BA01000000              	mov edx, 1		; size_t
+    52 00000016 8B0F                    	mov ecx, [edi]
+    53 00000018 BB00000000              	mov ebx, 0		; 0 : STDIN_COMMANDLINE
+    54                                  				; 1 : STDOUT_COMMANDLINE
+    55                                  				; 2 : STDERR_COMMANDLINE
+    56 0000001D B803000000              	mov eax, READ
+    57 00000022 CD80                    	int 0x80
+    58 00000024 C3                      	ret
+    59                                  
+    60                                  msgout:
+    61 00000025 8B4500                  	mov eax, [ebp]
+    62 00000028 83F800                  	cmp eax, EOS
+    63 0000002B 7408                    	je  back
+    64 0000002D E808000000              	call chrout
+    65 00000032 45                      	inc ebp
+    66 00000033 EBF0                    	jmp msgout		; loop meg
+    67                                  	
+    68                                  back:	
+    69 00000035 E814000000              	call quit
+    70                                  
+    71                                  chrout:	
+    72                                  	
+    73 0000003A BA01000000              	mov edx, 1		; operand size prefix : 66
+    74                                  				; e.g.) 66 BA 0C : mov edx, len
+    75                                  				;     ) len : "hello, world" -> 0C
+    76                                  				; address size prefix : 67
+    77 0000003F 89E9                    	mov ecx, ebp
+    78 00000041 BB01000000              	mov ebx, 1		; file discriptor number : int fd
+    79 00000046 B804000000              	mov eax, 4		; syscall number : 4 -> sys_write
+    80                                  				; sys_write : ebx -> unsigned int 
+    81                                  				;           : ecx -> const char *
+    82                                  				;           : edx -> size_t
+    83 0000004B CD80                    	int 0x80		; execute instruction
+    84 0000004D C3                      	ret
+    85                                  
+    86                                  quit:	
+    87 0000004E BB00000000              	mov ebx, 0
+    88 00000053 B801000000              	mov eax, EXIT
+    89 00000058 CD80                    	int 0x80
+    90 0000005A C3                      	ret
+    91                                  
+    92                                  msg:
+    93 0000005B 68656C6C6F2C20776F-     	db "hello, world", EOS
+    94 00000064 726C6400           
+    95                                  
+    96                                  qst:
+    97 00000068 3F00                    	db "?", EOS
+    98                                  	
+    99                                  job1_msg:
+   100 0000006A 6A6F62312063616C6C-     	db "job1 called", EOS
+   101 00000073 656400             

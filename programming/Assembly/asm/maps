@@ -1,0 +1,32 @@
+08048000-0804e000 r-xp 00000000 08:01 397998     /sbin/getty
+0804e000-0804f000 r--p 00005000 08:01 397998     /sbin/getty
+0804f000-08050000 rw-p 00006000 08:01 397998     /sbin/getty
+08050000-08052000 rw-p 00000000 00:00 0 
+08c07000-08c28000 rw-p 00000000 00:00 0          [heap]
+b72c0000-b72e6000 r--p 00000000 08:01 1049939    /usr/lib/locale/C.UTF-8/LC_CTYPE
+b72e6000-b74e6000 r--p 00000000 08:01 1057344    /usr/lib/locale/locale-archive
+b74e6000-b74f1000 r-xp 00000000 08:01 398080     /lib/i386-linux-gnu/libnss_files-2.15.so
+b74f1000-b74f2000 r--p 0000a000 08:01 398080     /lib/i386-linux-gnu/libnss_files-2.15.so
+b74f2000-b74f3000 rw-p 0000b000 08:01 398080     /lib/i386-linux-gnu/libnss_files-2.15.so
+b74f3000-b74fd000 r-xp 00000000 08:01 397999     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b74fd000-b74fe000 r--p 00009000 08:01 397999     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b74fe000-b74ff000 rw-p 0000a000 08:01 397999     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b74ff000-b7515000 r-xp 00000000 08:01 408024     /lib/i386-linux-gnu/libnsl-2.15.so
+b7515000-b7516000 r--p 00015000 08:01 408024     /lib/i386-linux-gnu/libnsl-2.15.so
+b7516000-b7517000 rw-p 00016000 08:01 408024     /lib/i386-linux-gnu/libnsl-2.15.so
+b7517000-b7519000 rw-p 00000000 00:00 0 
+b7519000-b7520000 r-xp 00000000 08:01 408247     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b7520000-b7521000 r--p 00006000 08:01 408247     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b7521000-b7522000 rw-p 00007000 08:01 408247     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b7522000-b7523000 rw-p 00000000 00:00 0 
+b7523000-b76c6000 r-xp 00000000 08:01 408278     /lib/i386-linux-gnu/libc-2.15.so
+b76c6000-b76c8000 r--p 001a3000 08:01 408278     /lib/i386-linux-gnu/libc-2.15.so
+b76c8000-b76c9000 rw-p 001a5000 08:01 408278     /lib/i386-linux-gnu/libc-2.15.so
+b76c9000-b76cc000 rw-p 00000000 00:00 0 
+b76d9000-b76e0000 r--s 00000000 08:01 1050300    /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+b76e0000-b76e2000 rw-p 00000000 00:00 0 
+b76e2000-b76e3000 r-xp 00000000 00:00 0          [vdso]
+b76e3000-b7703000 r-xp 00000000 08:01 398091     /lib/i386-linux-gnu/ld-2.15.so
+b7703000-b7704000 r--p 0001f000 08:01 398091     /lib/i386-linux-gnu/ld-2.15.so
+b7704000-b7705000 rw-p 00020000 08:01 398091     /lib/i386-linux-gnu/ld-2.15.so
+bfcc6000-bfce7000 rw-p 00000000 00:00 0          [stack]

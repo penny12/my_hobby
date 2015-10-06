@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+
+int Bit(int x)
+{
+  return 1 << x;
+}

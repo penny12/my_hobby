@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+
+#define ARRAY_SIZE(array) (sizeof *ARRAY_SIZE_(&(array))
+
+template <typename T, size_t N>
+char (*ARRAY_SIZE_(T (*)[N]))[N];

@@ -1,0 +1,22 @@
+     1                                  
+     2                                  
+     3                                  	global main
+     4                                  
+     5                                  main:
+     6                                  	
+     7 00000000 BA0C000000              	mov edx, 12		; operand size prefix : 66
+     8                                  				; e.g.) 66 BA 0C : mov edx, len
+     9                                  				;     ) len : "hello, world" -> 0C
+    10                                  				; address size prefix : 67
+    11 00000005 B9[17000000]            	mov ecx, hello
+    12 0000000A BB01000000              	mov ebx, 1		; file discriptor number : int fd
+    13 0000000F B804000000              	mov eax, 4		; syscall number : 4 -> sys_write
+    14                                  				; sys_write : ebx -> unsigned int 
+    15                                  				;           : ecx -> const char *
+    16                                  				;           : edx -> size_t
+    17 00000014 CD80                    	int 0x80		; execute instruction
+    18 00000016 C3                      	ret
+    19                                  
+    20                                  hello:
+    21 00000017 48656C6C6F2C20576F-     	db "Hello, World"
+    22 00000020 726C64             

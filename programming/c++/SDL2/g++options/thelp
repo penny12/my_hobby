@@ -1,0 +1,331 @@
+The following options are target specific:
+  -m128bit-long-double        sizeof(long double) is 16
+  -m32                        Generate 32bit i386 code
+  -m3dnow                     Support 3DNow! built-in functions
+  -m64                        Generate 64bit x86-64 code
+  -m80387                     Use hardware fp
+  -m8bit-idiv                 Expand 32bit/64bit integer divide into 8bit unsigned integer
+                              divide with run-time check
+  -m96bit-long-double         sizeof(long double) is 12
+  -mabi=                      Generate code that conforms to the given ABI
+  -mabm                       Support code generation of Advanced Bit Manipulation (ABM)
+                              instructions.
+  -maccumulate-outgoing-args  Reserve space for outgoing arguments in the function prologue
+  -maes                       Support AES built-in functions and code generation
+  -malign-double              Align some doubles on dword boundary
+  -malign-functions=          Function starts are aligned to this power of 2
+  -malign-jumps=              Jump targets are aligned to this power of 2
+  -malign-loops=              Loop code aligned to this power of 2
+  -malign-stringops           Align destination of the string operations
+  -mandroid                   Generate code for the Android platform.
+  -march=                     Generate code for given CPU
+  -masm=                      Use given assembler dialect
+  -mavx                       Support MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2 and AVX
+                              built-in functions and code generation
+  -mavx256-split-unaligned-load Split 32-byte AVX unaligned load
+  -mavx256-split-unaligned-store Split 32-byte AVX unaligned store
+  -mbionic                    Use Bionic C library
+  -mbmi                       Support BMI built-in functions and code generation
+  -mbranch-cost=              Branches are this expensive (1-5, arbitrary units)
+  -mcld                       Generate cld instruction in the function prologue.
+  -mcmodel=                   Use given x86-64 code model
+  -mcrc32                     Support code generation of crc32 instruction.
+  -mcx16                      Support code generation of cmpxchg16b instruction.
+  -mdispatch-scheduler        Do dispatch scheduling if processor is bdver1 and Haifa
+                              scheduling is selected.
+  -mf16c                      Support F16C built-in functions and code generation
+  -mfancy-math-387            Generate sin, cos, sqrt for FPU
+  -mfentry                    Emit profiling counter call at function entry before prologue.
+  -mfma                       Support MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX and
+                              FMA built-in functions and code generation
+  -mfma4                      Support FMA4 built-in functions and code generation 
+  -mforce-drap                Always use Dynamic Realigned Argument Pointer (DRAP) to realign
+                              stack
+  -mfp-ret-in-387             Return values of functions in FPU registers
+  -mfpmath=                   Generate floating point mathematics using given instruction set
+  -mfsgsbase                  Support FSGSBASE built-in functions and code generation
+  -mglibc                     Use GNU C library
+  -mhard-float                Use hardware fp
+  -mieee-fp                   Use IEEE math for fp comparisons
+  -mincoming-stack-boundary=  Assume incoming stack aligned to this power of 2
+  -minline-all-stringops      Inline all known string operations
+  -minline-stringops-dynamically Inline memset/memcpy string operations, but perform inline
+                              version only for small blocks
+  -mlarge-data-threshold=     Data greater than given threshold will go into .ldata section
+                              in x86-64 medium model
+  -mlwp                       Support LWP built-in functions and code generation 
+  -mmmx                       Support MMX built-in functions
+  -mmovbe                     Support code generation of movbe instruction.
+  -mms-bitfields              Use native (MS) bitfield layout
+  -mno-sse4                   Do not support SSE4.1 and SSE4.2 built-in functions and code
+                              generation
+  -momit-leaf-frame-pointer   Omit the frame pointer in leaf functions
+  -mpc                        Set 80387 floating-point precision (-mpc32, -mpc64, -mpc80)
+  -mpclmul                    Support PCLMUL built-in functions and code generation
+  -mpopcnt                    Support code generation of popcnt instruction.
+  -mprefer-avx128             Use 128-bit AVX instructions instead of 256-bit AVX
+                              instructions in the auto-vectorizer.
+  -mpreferred-stack-boundary= Attempt to keep stack aligned to this power of 2
+  -mpush-args                 Use push instructions to save outgoing arguments
+  -mrdrnd                     Support RDRND built-in functions and code generation
+  -mrecip                     Generate reciprocals instead of divss and sqrtss.
+  -mred-zone                  Use red-zone in the x86-64 code
+  -mregparm=                  Number of registers used to pass integer arguments
+  -mrtd                       Alternate calling convention
+  -msahf                      Support code generation of sahf instruction in 64bit x86-64
+                              code.
+  -msoft-float                Do not use hardware fp
+  -msse                       Support MMX and SSE built-in functions and code generation
+  -msse2                      Support MMX, SSE and SSE2 built-in functions and code generation
+  -msse2avx                   Encode SSE instructions with VEX prefix
+  -msse3                      Support MMX, SSE, SSE2 and SSE3 built-in functions and code
+                              generation
+  -msse4                      Support MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1 and SSE4.2 built-in
+                              functions and code generation
+  -msse4.1                    Support MMX, SSE, SSE2, SSE3, SSSE3 and SSE4.1 built-in
+                              functions and code generation
+  -msse4.2                    Support MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1 and SSE4.2 built-in
+                              functions and code generation
+  -msse4a                     Support MMX, SSE, SSE2, SSE3 and SSE4A built-in functions and
+                              code generation
+  -msseregparm                Use SSE register passing conventions for SF and DF mode
+  -mssse3                     Support MMX, SSE, SSE2, SSE3 and SSSE3 built-in functions and
+                              code generation
+  -mstack-arg-probe           Enable stack probing
+  -mstackrealign              Realign stack in prologue
+  -mstringop-strategy=        Chose strategy to generate stringop using
+  -mtbm                       Support TBM built-in functions and code generation
+  -mtls-dialect=              Use given thread-local storage dialect
+  -mtls-direct-seg-refs       Use direct references against %gs when accessing tls data
+  -mtune=                     Schedule code for given CPU
+  -muclibc                    Use uClibc C library
+  -mveclibabi=                Vector library ABI to use
+  -mvect8-ret-in-mem          Return 8-byte vectors in memory
+  -mvzeroupper                Generate vzeroupper instruction before a transfer of control
+                              flow out of the function.
+  -mxop                       Support XOP built-in functions and code generation 
+
+Assembler options
+=================
+
+Use "-Wa,OPTION" to pass "OPTION" to the assembler.
+
+  -Q                      ignored
+  -V                      print assembler version number
+  -k                      ignored
+  -n                      Do not optimize code alignment
+  -q                      quieten some warnings
+  -s                      ignored
+  --32/--64/--x32         generate 32bit/64bit/x32 code
+  --divide                ignored
+  -march=CPU[,+EXTENSION...]
+                          generate code for CPU and EXTENSION, CPU is one of:
+                           generic32, generic64, i386, i486, i586, i686,
+                           pentium, pentiumpro, pentiumii, pentiumiii, pentium4,
+                           prescott, nocona, core, core2, corei7, l1om, k1om,
+                           k6, k6_2, athlon, opteron, k8, amdfam10, bdver1,
+                           bdver2
+                          EXTENSION is combination of:
+                           8087, 287, 387, no87, mmx, nommx, sse, sse2, sse3,
+                           ssse3, sse4.1, sse4.2, sse4, nosse, avx, avx2, noavx,
+                           vmx, smx, xsave, xsaveopt, aes, pclmul, fsgsbase,
+                           rdrnd, f16c, bmi2, fma, fma4, xop, lwp, movbe, ept,
+                           lzcnt, invpcid, clflush, nop, syscall, rdtscp, 3dnow,
+                           3dnowa, padlock, svme, sse4a, abm, bmi, tbm
+  -mtune=CPU              optimize for CPU, CPU is one of:
+                           generic32, generic64, i8086, i186, i286, i386, i486,
+                           i586, i686, pentium, pentiumpro, pentiumii,
+                           pentiumiii, pentium4, prescott, nocona, core, core2,
+                           corei7, l1om, k1om, k6, k6_2, athlon, opteron, k8,
+                           amdfam10, bdver1, bdver2
+  -msse2avx               encode SSE instructions with VEX prefix
+  -msse-check=[none|error|warning]
+                          check SSE instructions
+  -mavxscalar=[128|256]   encode scalar AVX instructions with specific vector
+                           length
+  -mmnemonic=[att|intel]  use AT&T/Intel mnemonic
+  -msyntax=[att|intel]    use AT&T/Intel syntax
+  -mindex-reg             support pseudo index registers
+  -mnaked-reg             don't require `%' prefix for registers
+  -mold-gcc               support old (<= 2.8.1) versions of gcc
+
+Linker options
+==============
+
+Use "-Wl,OPTION" to pass "OPTION" to the linker.
+
+elf_i386: 
+  --audit=AUDITLIB            Specify a library to use for auditing
+  -Bgroup                     Selects group name lookup rules for DSO
+  --build-id[=STYLE]          Generate build ID note
+  -P AUDITLIB, --depaudit=AUDITLIB
+                              Specify a library to use for auditing dependencies
+  --disable-new-dtags         Disable new dynamic tags
+  --enable-new-dtags          Enable new dynamic tags
+  --eh-frame-hdr              Create .eh_frame_hdr section
+  --exclude-libs=LIBS         Make all symbols in LIBS hidden
+  --hash-style=STYLE          Set hash style to sysv, gnu or both
+  -z combreloc                Merge dynamic relocs into one section and sort
+  -z common-page-size=SIZE    Set common page size to SIZE
+  -z defs                     Report unresolved symbols in object files.
+  -z execstack                Mark executable as requiring executable stack
+  -z initfirst                Mark DSO to be initialized first at runtime
+  -z interpose                Mark object to interpose all DSOs but executable
+  -z lazy                     Mark object lazy runtime binding (default)
+  -z loadfltr                 Mark object requiring immediate process
+  -z max-page-size=SIZE       Set maximum page size to SIZE
+  -z muldefs                  Allow multiple definitions
+  -z nocombreloc              Don't merge dynamic relocs into one section
+  -z nocopyreloc              Don't create copy relocs
+  -z nodefaultlib             Mark object not to use default search paths
+  -z nodelete                 Mark DSO non-deletable at runtime
+  -z nodlopen                 Mark DSO not available to dlopen
+  -z nodump                   Mark DSO not available to dldump
+  -z noexecstack              Mark executable as not requiring executable stack
+  -z norelro                  Don't create RELRO program header
+  -z now                      Mark object non-lazy runtime binding
+  -z origin                   Mark object requiring immediate $ORIGIN
+                                processing at runtime
+  -z relro                    Create RELRO program header
+  --ld-generated-unwind-info  Generate exception handling info for PLT.
+  --no-ld-generated-unwind-info Don't do so.
+elf32_x86_64: 
+  --audit=AUDITLIB            Specify a library to use for auditing
+  -Bgroup                     Selects group name lookup rules for DSO
+  --build-id[=STYLE]          Generate build ID note
+  -P AUDITLIB, --depaudit=AUDITLIB
+                              Specify a library to use for auditing dependencies
+  --disable-new-dtags         Disable new dynamic tags
+  --enable-new-dtags          Enable new dynamic tags
+  --eh-frame-hdr              Create .eh_frame_hdr section
+  --exclude-libs=LIBS         Make all symbols in LIBS hidden
+  --hash-style=STYLE          Set hash style to sysv, gnu or both
+  -z combreloc                Merge dynamic relocs into one section and sort
+  -z common-page-size=SIZE    Set common page size to SIZE
+  -z defs                     Report unresolved symbols in object files.
+  -z execstack                Mark executable as requiring executable stack
+  -z initfirst                Mark DSO to be initialized first at runtime
+  -z interpose                Mark object to interpose all DSOs but executable
+  -z lazy                     Mark object lazy runtime binding (default)
+  -z loadfltr                 Mark object requiring immediate process
+  -z max-page-size=SIZE       Set maximum page size to SIZE
+  -z muldefs                  Allow multiple definitions
+  -z nocombreloc              Don't merge dynamic relocs into one section
+  -z nocopyreloc              Don't create copy relocs
+  -z nodefaultlib             Mark object not to use default search paths
+  -z nodelete                 Mark DSO non-deletable at runtime
+  -z nodlopen                 Mark DSO not available to dlopen
+  -z nodump                   Mark DSO not available to dldump
+  -z noexecstack              Mark executable as not requiring executable stack
+  -z norelro                  Don't create RELRO program header
+  -z now                      Mark object non-lazy runtime binding
+  -z origin                   Mark object requiring immediate $ORIGIN
+                                processing at runtime
+  -z relro                    Create RELRO program header
+  --ld-generated-unwind-info  Generate exception handling info for PLT.
+  --no-ld-generated-unwind-info Don't do so.
+elf_x86_64: 
+  --audit=AUDITLIB            Specify a library to use for auditing
+  -Bgroup                     Selects group name lookup rules for DSO
+  --build-id[=STYLE]          Generate build ID note
+  -P AUDITLIB, --depaudit=AUDITLIB
+                              Specify a library to use for auditing dependencies
+  --disable-new-dtags         Disable new dynamic tags
+  --enable-new-dtags          Enable new dynamic tags
+  --eh-frame-hdr              Create .eh_frame_hdr section
+  --exclude-libs=LIBS         Make all symbols in LIBS hidden
+  --hash-style=STYLE          Set hash style to sysv, gnu or both
+  -z combreloc                Merge dynamic relocs into one section and sort
+  -z common-page-size=SIZE    Set common page size to SIZE
+  -z defs                     Report unresolved symbols in object files.
+  -z execstack                Mark executable as requiring executable stack
+  -z initfirst                Mark DSO to be initialized first at runtime
+  -z interpose                Mark object to interpose all DSOs but executable
+  -z lazy                     Mark object lazy runtime binding (default)
+  -z loadfltr                 Mark object requiring immediate process
+  -z max-page-size=SIZE       Set maximum page size to SIZE
+  -z muldefs                  Allow multiple definitions
+  -z nocombreloc              Don't merge dynamic relocs into one section
+  -z nocopyreloc              Don't create copy relocs
+  -z nodefaultlib             Mark object not to use default search paths
+  -z nodelete                 Mark DSO non-deletable at runtime
+  -z nodlopen                 Mark DSO not available to dlopen
+  -z nodump                   Mark DSO not available to dldump
+  -z noexecstack              Mark executable as not requiring executable stack
+  -z norelro                  Don't create RELRO program header
+  -z now                      Mark object non-lazy runtime binding
+  -z origin                   Mark object requiring immediate $ORIGIN
+                                processing at runtime
+  -z relro                    Create RELRO program header
+  --ld-generated-unwind-info  Generate exception handling info for PLT.
+  --no-ld-generated-unwind-info Don't do so.
+elf_l1om: 
+  --audit=AUDITLIB            Specify a library to use for auditing
+  -Bgroup                     Selects group name lookup rules for DSO
+  --build-id[=STYLE]          Generate build ID note
+  -P AUDITLIB, --depaudit=AUDITLIB
+                              Specify a library to use for auditing dependencies
+  --disable-new-dtags         Disable new dynamic tags
+  --enable-new-dtags          Enable new dynamic tags
+  --eh-frame-hdr              Create .eh_frame_hdr section
+  --exclude-libs=LIBS         Make all symbols in LIBS hidden
+  --hash-style=STYLE          Set hash style to sysv, gnu or both
+  -z combreloc                Merge dynamic relocs into one section and sort
+  -z common-page-size=SIZE    Set common page size to SIZE
+  -z defs                     Report unresolved symbols in object files.
+  -z execstack                Mark executable as requiring executable stack
+  -z initfirst                Mark DSO to be initialized first at runtime
+  -z interpose                Mark object to interpose all DSOs but executable
+  -z lazy                     Mark object lazy runtime binding (default)
+  -z loadfltr                 Mark object requiring immediate process
+  -z max-page-size=SIZE       Set maximum page size to SIZE
+  -z muldefs                  Allow multiple definitions
+  -z nocombreloc              Don't merge dynamic relocs into one section
+  -z nocopyreloc              Don't create copy relocs
+  -z nodefaultlib             Mark object not to use default search paths
+  -z nodelete                 Mark DSO non-deletable at runtime
+  -z nodlopen                 Mark DSO not available to dlopen
+  -z nodump                   Mark DSO not available to dldump
+  -z noexecstack              Mark executable as not requiring executable stack
+  -z norelro                  Don't create RELRO program header
+  -z now                      Mark object non-lazy runtime binding
+  -z origin                   Mark object requiring immediate $ORIGIN
+                                processing at runtime
+  -z relro                    Create RELRO program header
+  --ld-generated-unwind-info  Generate exception handling info for PLT.
+  --no-ld-generated-unwind-info Don't do so.
+elf_k1om: 
+  --audit=AUDITLIB            Specify a library to use for auditing
+  -Bgroup                     Selects group name lookup rules for DSO
+  --build-id[=STYLE]          Generate build ID note
+  -P AUDITLIB, --depaudit=AUDITLIB
+                              Specify a library to use for auditing dependencies
+  --disable-new-dtags         Disable new dynamic tags
+  --enable-new-dtags          Enable new dynamic tags
+  --eh-frame-hdr              Create .eh_frame_hdr section
+  --exclude-libs=LIBS         Make all symbols in LIBS hidden
+  --hash-style=STYLE          Set hash style to sysv, gnu or both
+  -z combreloc                Merge dynamic relocs into one section and sort
+  -z common-page-size=SIZE    Set common page size to SIZE
+  -z defs                     Report unresolved symbols in object files.
+  -z execstack                Mark executable as requiring executable stack
+  -z initfirst                Mark DSO to be initialized first at runtime
+  -z interpose                Mark object to interpose all DSOs but executable
+  -z lazy                     Mark object lazy runtime binding (default)
+  -z loadfltr                 Mark object requiring immediate process
+  -z max-page-size=SIZE       Set maximum page size to SIZE
+  -z muldefs                  Allow multiple definitions
+  -z nocombreloc              Don't merge dynamic relocs into one section
+  -z nocopyreloc              Don't create copy relocs
+  -z nodefaultlib             Mark object not to use default search paths
+  -z nodelete                 Mark DSO non-deletable at runtime
+  -z nodlopen                 Mark DSO not available to dlopen
+  -z nodump                   Mark DSO not available to dldump
+  -z noexecstack              Mark executable as not requiring executable stack
+  -z norelro                  Don't create RELRO program header
+  -z now                      Mark object non-lazy runtime binding
+  -z origin                   Mark object requiring immediate $ORIGIN
+                                processing at runtime
+  -z relro                    Create RELRO program header
+  --ld-generated-unwind-info  Generate exception handling info for PLT.
+  --no-ld-generated-unwind-info Don't do so.

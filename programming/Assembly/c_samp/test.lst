@@ -1,0 +1,22 @@
+     1                                  	global	main
+     2                                  	extern printf
+     3                                  
+     4                                  	section .text
+     5                                  main:
+     6                                  LFB0:
+     7 00000000 55                      	push	ebp
+     8 00000001 89E5                    	mov	ebp, esp
+     9 00000003 83E4F0                  	and	esp, -16
+    10 00000006 83EC10                  	sub	esp, 16
+    11 00000009 B8[1D000000]            	mov	eax, LC0
+    12 0000000E 890424                  	mov	[esp], eax
+    13 00000011 E8(00000000)            	call	printf
+    14 00000016 B800000000              	mov	eax, 0
+    15 0000001B C9                      	leave
+    16 0000001C C3                      	ret
+    17                                  	
+    18                                  LC0:
+    19 0000001D 48656C6C6F2C20576F-     	db	"Hello, World"
+    20 00000026 726C64             
+    21                                  	
+    22                                  	

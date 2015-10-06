@@ -1,0 +1,10 @@
+#ifndef __EXCEPTION_H_
+#defien __EXCEPTION_H_
+
+class Exception
+{
+public:
+  virtual ~Exception();
+};
+
+#endif

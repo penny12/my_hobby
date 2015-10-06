@@ -1,0 +1,7 @@
+system call numbers wrote /linux/arch/ia64/kernel/entry.S
+
+# asm compile
+nasm -l test.lst -f elf -o test.o test.asm 
+gcc -o test test.o
+
+-l flag is create lst file

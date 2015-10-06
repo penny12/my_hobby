@@ -1,0 +1,1 @@
+cmd_/home/prinny12/hobby/programming/Linux/LinuxDeviceDriver/ldd3/built-in.o :=  rm -f /home/prinny12/hobby/programming/Linux/LinuxDeviceDriver/ldd3/built-in.o; ar rcsD /home/prinny12/hobby/programming/Linux/LinuxDeviceDriver/ldd3/built-in.o
